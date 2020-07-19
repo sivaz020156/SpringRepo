@@ -6,7 +6,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;  
 import org.springframework.core.io.Resource;  
   
-public class Test {  
+public class Test { 
+	
 public static void main(String[] args) { 
 	
 	
@@ -49,6 +50,26 @@ public static void main(String[] args) {
 //    System.out.println(factory.isSingleton("studentbean"));
 //    
 //    System.out.println(factory.getAliases("studentbean"));
-    
+  
+  
+  EmployeeSetter eSetter=(EmployeeSetter)factory.getBean("empObj");
+  eSetter.displayInfo();
+  
+  EmployeeSetter eSetterDep=(EmployeeSetter)factory.getBean("empObjDependent");
+  eSetterDep.displayInfo();
+  
+  
+  QuestionSetter ques=(QuestionSetter)factory.getBean("q");
+  
+  
+ 
+  ques.displayInfo();
+  
+  
+  QuestionSetter2 ques2=(QuestionSetter2)factory.getBean("q2");
+  
+  
+  
+  ques2.displayInfo();
 }  
 }  
